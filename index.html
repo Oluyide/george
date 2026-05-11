@@ -99,7 +99,7 @@
 
     /* ---------- Hero ---------- */
     .hero {
-      min-height: 92vh;
+      min-height: auto;
       display: grid;
       align-items: center;
       position: relative;
@@ -129,7 +129,7 @@
       grid-template-columns: 1.1fr 0.9fr;
       gap: 50px;
       align-items: center;
-      padding: 80px 0;
+      padding: 30px 0 60px;
     }
 
     .badge {
@@ -520,7 +520,7 @@
     /* ---------- Packages ---------- */
     .packages-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 20px;
     }
 
@@ -528,6 +528,7 @@
       display: flex;
       flex-direction: column;
       transition: 0.3s ease;
+      position: relative;
     }
 
     .package-card:hover {
@@ -544,6 +545,62 @@
 
     .package-card.featured:hover {
       transform: scale(1.03) translateY(-6px);
+    }
+
+    .package-tag {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: rgba(11, 15, 20, 0.85);
+      color: #7cff3a;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 5px 10px;
+      border-radius: 999px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .package-card.featured .package-tag {
+      background: #061006;
+      color: #7cff3a;
+    }
+
+    .consult-card {
+      margin-top: 28px;
+      background: linear-gradient(135deg, #131c27, #0f1620);
+      border: 1px solid rgba(124, 255, 58, 0.25);
+      border-radius: 28px;
+      padding: 28px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .consult-card .consult-text h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .consult-card .consult-text p {
+      color: #aab6c8;
+      font-size: 0.95rem;
+      max-width: 560px;
+    }
+
+    .consult-card .consult-price {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .consult-card .consult-price .price {
+      margin: 0;
+      font-size: 2rem;
     }
 
     .package-card .desc {
@@ -844,6 +901,10 @@
       .services-grid {
         grid-template-columns: repeat(3, 1fr);
       }
+
+      .packages-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (max-width: 980px) {
@@ -939,7 +1000,7 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <span class="badge"><span class="dot"></span> Personal Training &middot; Meal Plans &middot; Body Transformation</span>
+          <span class="badge"><span class="dot"></span> Personal Training &middot; Meal Plans &middot; Body Transformation &middot; Consultations</span>
           <h1>Build Strength.<br />Burn Fat.<br /><span>Transform</span> Your Life.</h1>
           <p>
             Get a customized fitness experience designed around your body, your schedule, and your goals.
@@ -1104,49 +1165,83 @@
     <section id="packages">
       <div class="container">
         <div class="section-heading">
-          <h2>Flexible Fitness Packages</h2>
-          <p>Start small, go premium, or choose a complete transformation plan depending on your current goals.</p>
+          <h2>Our Training Packages</h2>
+          <p>Choose the package that fits your goals and weekly schedule. Every plan includes training, nutrition tools, and ongoing accountability.</p>
         </div>
 
         <div class="packages-grid">
           <article class="package-card">
-            <h3>Starter</h3>
-            <p class="desc">Perfect for beginners who need structure and guidance.</p>
-            <div class="price">&euro;99 <small>/ month</small></div>
+            <span class="package-tag">Regular</span>
+            <h3>The Regular</h3>
+            <p class="desc">One-on-one training with flexible session count. Includes a trial session. No meal planner.</p>
+            <div class="price">&euro;60 <small>/ per session</small></div>
             <ul>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 2 training sessions weekly</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Basic meal guidance</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Monthly progress check</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> WhatsApp accountability</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> One-on-one personal training</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> One-time trial session included</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Flexible session count</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Form coaching &amp; progress tracking</li>
             </ul>
-            <a href="#contact" class="btn btn-outline">Choose Starter</a>
-          </article>
-
-          <article class="package-card featured">
-            <h3>Transformation</h3>
-            <p class="desc">Best for serious results with full support.</p>
-            <div class="price">&euro;199 <small>/ month</small></div>
-            <ul>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 4 training sessions weekly</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Custom meal plan</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Weekly progress review</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Body measurement tracking</li>
-            </ul>
-            <a href="#contact" class="btn">Choose Transformation</a>
+            <a href="#contact" class="btn btn-outline">Choose Regular</a>
           </article>
 
           <article class="package-card">
-            <h3>Online Coach</h3>
-            <p class="desc">Train from anywhere with remote support.</p>
-            <div class="price">&euro;149 <small>/ month</small></div>
+            <span class="package-tag">Silver</span>
+            <h3>Silver Package</h3>
+            <p class="desc">A great starting point with full support on a lighter schedule.</p>
+            <div class="price">&euro;240 <small>/ month</small></div>
             <ul>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Custom workout program</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Video check-ins</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Nutrition support</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Weekly accountability</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 1 session / week (4 monthly)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Muscle building / weight-loss training</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Comprehensive healthy grocery list</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Meal calculator</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Fitness lifestyle mentorship</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Accountability check-ups</li>
             </ul>
-            <a href="#contact" class="btn btn-outline">Choose Online</a>
+            <a href="#contact" class="btn btn-outline">Choose Silver</a>
           </article>
+
+          <article class="package-card">
+            <span class="package-tag">Gold</span>
+            <h3>Gold Package</h3>
+            <p class="desc">Balanced training with steady, sustainable progress.</p>
+            <div class="price">&euro;400 <small>/ month</small></div>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 2 sessions / week (8 monthly)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Muscle building / weight-loss training</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Comprehensive healthy grocery list</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Meal calculator</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Fitness lifestyle mentorship</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Accountability check-ups</li>
+            </ul>
+            <a href="#contact" class="btn btn-outline">Choose Gold</a>
+          </article>
+
+          <article class="package-card featured">
+            <span class="package-tag">Premium</span>
+            <h3>Premium Package</h3>
+            <p class="desc">Maximum results with the highest training frequency.</p>
+            <div class="price">&euro;600 <small>/ month</small></div>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 3 sessions / week (12 monthly)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Muscle building / weight-loss training</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Comprehensive healthy grocery list</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Meal calculator</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Fitness lifestyle mentorship</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Accountability check-ups</li>
+            </ul>
+            <a href="#contact" class="btn">Choose Premium</a>
+          </article>
+        </div>
+
+        <div class="consult-card">
+          <div class="consult-text">
+            <h3>Fitness Consultation</h3>
+            <p>A focused one-on-one consultation to review your goals, current routine, and build the right plan before you commit to a package.</p>
+          </div>
+          <div class="consult-price">
+            <div class="price">&euro;50 <small>/ session</small></div>
+            <a href="#contact" class="btn btn-primary">Book Consultation</a>
+          </div>
         </div>
       </div>
     </section>
@@ -1226,11 +1321,15 @@
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              +372 0000 0000
+              <a href="tel:+37258894587">+372 5889 4587</a>
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg>
-              hello@georgefit.com
+              <a href="mailto:Musclegeorge50@gmail.com">Musclegeorge50@gmail.com</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              <a href="https://instagram.com/georgefit_" target="_blank" rel="noopener">@georgefit_</a>
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -1239,11 +1338,9 @@
           </ul>
 
           <div class="socials">
-            <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg> Instagram</a>
-            <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg> TikTok</a>
-            <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook</a>
-            <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg> YouTube</a>
-            <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg> WhatsApp</a>
+            <a href="https://instagram.com/georgefit_" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg> @georgefit_</a>
+            <a href="mailto:Musclegeorge50@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg> Email</a>
+            <a href="https://wa.me/37258894587" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg> WhatsApp</a>
           </div>
         </div>
 
@@ -1265,14 +1362,14 @@
               <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" />
             </div>
             <div>
-              <label for="goal">Fitness Goal</label>
+              <label for="goal">Choose Package</label>
               <select id="goal" name="goal" required>
-                <option value="">Select your goal</option>
-                <option>Weight Loss</option>
-                <option>Muscle Building</option>
-                <option>Personal Training</option>
-                <option>Meal Plan</option>
-                <option>Online Coaching</option>
+                <option value="">Select a package</option>
+                <option>Consultation (&euro;50)</option>
+                <option>The Regular (&euro;60 / session)</option>
+                <option>Silver Package (&euro;240 / mo)</option>
+                <option>Gold Package (&euro;400 / mo)</option>
+                <option>Premium Package (&euro;600 / mo)</option>
               </select>
             </div>
           </div>
